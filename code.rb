@@ -1,27 +1,12 @@
-require 'pry'
-class Tube
-
-  def initialize(height, circum)
-    @height = height
-    @circum = circum
+def mergeArrays(a, b)
+  a.each do |n|
+    b << n
   end
-
-  def radius
-    @circum/(2 * Math::PI)
+  b.sort!
+  b.each do |n|
+    print n
   end
-
-  def area
-    @area = Math::PI * (self.radius**2)
-  end
-
-  def volume
-    @volume = self.area * @height
-  end
-
 end
-# binding.pry
-t1 = Tube.new(8.5, 11)
-t2 = Tube.new(11, 8.5)
-
-difference = t1.volume - t2.volume
-print difference.round(6)
+arr = [1,2,3,4,5]
+brr = [2,4,6,8,10]
+mergeArrays(arr, brr)
